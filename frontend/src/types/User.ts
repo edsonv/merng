@@ -1,16 +1,12 @@
-export type UserData = {
+export type UserData = UserContextData &{
   id: string;
-  username: string;
   email: string;
-  createdAt: Date;
-  token: string;
-  __typename: string;
+  username: string;
+  createdAt?: Date;
+  token?: string;
 };
 
 export type UserContextData = {
-  email: string;
-  exp: number;
-  iat: number;
-  id: string;
-  username: string;
+  exp?: number;
+  iat?: number;
 };

@@ -1,4 +1,4 @@
-import { UserContextData, UserData } from '@/types/User';
+import {  UserData } from '@/types/User';
 import { createContext, PropsWithChildren, useReducer } from 'react';
 import {
   authReducer,
@@ -8,9 +8,10 @@ import {
 import { jwtDecode } from 'jwt-decode';
 
 if (localStorage.getItem('jwtToken')) {
-  const decodedToken: UserContextData = jwtDecode(
+  const decodedToken: UserData = jwtDecode(
     JSON.stringify(localStorage.getItem('jwtToken'))
   );
+  console.log(decodedToken);
 
   if (decodedToken.exp! * 1000 < Date.now()) {
     localStorage.clear();
@@ -25,7 +26,7 @@ const AuthProvider = (props: PropsWithChildren) => {
   const [state, dispatch] = useReducer(authReducer, initialState);
 
   function login(userData: UserData) {
-    localStorage.setItem('jwtToken', userData.token);
+    localStorage.setItem('jwtToken', userData.token as string);
 
     dispatch({
       type: 'LOGIN',

@@ -1,6 +1,6 @@
-import { UserContextData, UserData } from '@/types/User';
+import {  UserData } from '@/types/User';
 
 export type AuthContextActions = {
   type: string;
-  payload?: UserContextData | UserData | null;
+  payload?: UserData | null;
 };

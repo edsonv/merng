@@ -1,3 +1,4 @@
+import { PostCard } from '@/components/PostCard/PostCard';
 import { GET_POSTS } from '@/graphql/Posts/getPosts';
 import { Post } from '@/types/Post';
 import { useQuery } from '@apollo/client';
@@ -16,15 +17,15 @@ export const Home = (): JSX.Element => {
   if (error) return <p>{JSON.stringify(error)}</p>;
 
   return (
-    <div>
-      <h1 className='text-xl font-bold'>Recent Post</h1>
-      <div className='grid grid-cols-3'>
+    <div className='flex flex-col gap-3'>
+      <h1 className='text-[2rem] font-bold text-center'>Recent Post</h1>
+      <div className='grid grid-cols-3 gap-4'>
         {loading ? (
           <p>Loading...</p>
         ) : (
           posts &&
           posts.map((post) => {
-            return <div>{post.body}</div>;
+            return <PostCard post={post} key={post.id} />;
           })
         )}
       </div>

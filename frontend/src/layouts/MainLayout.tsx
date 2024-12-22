@@ -7,7 +7,7 @@ type Children = {
 
 export const MainLayout = ({ children }: Children) => {
   return (
-    <div className='mx-8 my-4'>
+    <div className='mx-[18rem] mt-[2rem] mb-[4rem] '>
       <MenuBar />
       <main className='mt-6'>{children}</main>
     </div>

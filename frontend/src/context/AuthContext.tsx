@@ -1,4 +1,4 @@
-import {  UserData } from '@/types/User';
+import { UserData } from '@/types/User';
 import { createContext, PropsWithChildren, useReducer } from 'react';
 import {
   authReducer,
@@ -11,7 +11,6 @@ if (localStorage.getItem('jwtToken')) {
   const decodedToken: UserData = jwtDecode(
     JSON.stringify(localStorage.getItem('jwtToken'))
   );
-  console.log(decodedToken);
 
   if (decodedToken.exp! * 1000 < Date.now()) {
     localStorage.clear();

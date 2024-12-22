@@ -8,12 +8,10 @@ export type Post = {
   likes: Like[];
   commentCount: number;
   comments: Comment[];
-  __typename: string;
 };
 
 export type Like = {
   username: string;
-  __typename: string;
 };
 
 export type Comment = {
@@ -21,5 +19,4 @@ export type Comment = {
   username: string;
   createdAt: Date;
   body: string;
-  __typename: string;
 };

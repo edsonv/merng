@@ -1,8 +1,8 @@
 import { AuthContextActions } from '@/context/AuthContext.types';
-import { UserContextData, UserData } from '@/types/User';
+import { UserData } from '@/types/User';
 
 export type InitialState = {
-  user?: UserContextData | null;
+  user?: UserData | null;
   login: (userData: UserData) => void;
   logout: () => void;
 };

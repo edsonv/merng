@@ -1,19 +1,21 @@
 import { InputHTMLAttributes, ReactNode } from 'react';
 
 type Props = InputHTMLAttributes<HTMLInputElement> & {
-  children: ReactNode;
+  children?: ReactNode;
   error?: boolean;
 };
 
 export const FormInput = ({ children, error, ...props }: Props) => {
   return (
     <div className='flex flex-col gap-2 w-full'>
-      <label
-        htmlFor={props.id}
-        className={`font-bold ${error ? 'text-red-600' : ''}`}
-      >
-        {children}
-      </label>
+      {children && (
+        <label
+          htmlFor={props.id}
+          className={`font-bold ${error ? 'text-red-600' : ''}`}
+        >
+          {children}
+        </label>
+      )}
       <input
         type={props.type}
         name={props.id}

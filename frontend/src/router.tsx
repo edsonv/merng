@@ -1,15 +1,11 @@
-import {
-  BrowserRouter,
-  Navigate,
-  Route,
-  Routes,
-} from 'react-router';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router';
 import { Home } from './pages/Home';
 import { Login } from './pages/Login';
 import { Register } from './pages/Register';
 import { MainLayout } from './layouts/MainLayout';
 import { AuthProvider } from './context/AuthContext';
 import { useAuthContext } from './hooks/useAuthContext';
+import { SinglePost } from './pages/SinglePost';
 
 export const Router = () => {
   const { user } = useAuthContext();
@@ -21,13 +17,14 @@ export const Router = () => {
           <Routes>
             <Route index path='/' element={<Home />} />
             <Route
-              path='login'
+              path='/login'
               element={user ? <Navigate to='/' replace /> : <Login />}
             />
             <Route
-              path='register'
+              path='/register'
               element={user ? <Navigate to='/' replace /> : <Register />}
             />
+            <Route path='/posts/:postId' element={<SinglePost />} />
           </Routes>
         </MainLayout>
       </BrowserRouter>

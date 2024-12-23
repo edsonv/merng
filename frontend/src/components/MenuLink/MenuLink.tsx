@@ -11,7 +11,7 @@ export const MenuLink = ({ label, ...props }: MenuLink) => {
       to={props.to}
       className={({ isActive }) =>
         isActive
-          ? 'p-4 pb-[0.6rem] border-b-blue-500 border-b-4 no-underline'
+          ? 'p-4 pb-[0.6rem] border-b-blue-500 border-b-4 no-underline font-bold'
           : 'p-4 pb-[0.6rem] no-underline'
       }
     >

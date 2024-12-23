@@ -1,9 +1,9 @@
 import { DELETE_POST } from '@/graphql/Posts/deletePost';
+import { GET_POSTS } from '@/graphql/Posts/getPosts';
+import { Post } from '@/types/Post';
 import { useMutation } from '@apollo/client';
 import { Button } from '../Button/Button';
 import { DeleteIcon } from '../DeleteIcon/DeleteIcon';
-import { GET_POSTS } from '@/graphql/Posts/getPosts';
-import { Post } from '@/types/Post';
 
 type Props = {
   postId: string;
@@ -15,7 +15,7 @@ export const DeleteButton = ({ postId, callback }: Props) => {
     update(proxy) {
       // TODO: close confirmation modal
       // { implement here }
-      
+
       // TODO: remove post from cache
       const { getPosts } = proxy.readQuery({
         query: GET_POSTS,

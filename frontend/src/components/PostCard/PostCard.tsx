@@ -16,9 +16,9 @@ export const PostCard = ({ post }: Props) => {
   const { body, createdAt, id, username, likeCount, commentCount, likes } =
     post;
 
-  function deletePost() {
+  const deletePost = () => {
     navigate('/');
-  }
+  };
 
   return (
     <div className='border border-gray-400 rounded p-2'>

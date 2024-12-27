@@ -1,11 +1,10 @@
-import { useForm } from '@/hooks/useForm';
-import { FormInput } from '../FormInput/FormInput';
-
-import { Button } from '../Button/Button';
-import { useMutation } from '@apollo/client';
 import { CREATE_POST } from '@/graphql/Posts/createPost';
 import { GET_POSTS } from '@/graphql/Posts/getPosts';
+import { useForm } from '@/hooks/useForm';
 import { Post } from '@/types/Post';
+import { useMutation } from '@apollo/client';
+import { Button } from '../Button/Button';
+import { FormInput } from '../FormInput/FormInput';
 
 export const PostForm = () => {
   const { onSubmit, onChange, values } = useForm(createPostCallback, {

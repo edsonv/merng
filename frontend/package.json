@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "description": "https://www.youtube.com/watch?v=n1mdAPFq2Os",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
